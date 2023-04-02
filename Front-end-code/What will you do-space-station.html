@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon monsters</title>
+    <style>
+        body {
+            background-image: url(spacestation.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        .left {
+            position: fixed;
+            left: 10%;
+            margin-top: 50%;
+        }
+
+        .center {
+            position: fixed;
+            left: 38%;
+            margin-top: 45%;
+        }
+
+        .right {
+            position: fixed;
+            right: 10%;
+            margin-top: 50%;
+        }
+        .heading_style {
+            position: fixed;
+            color: white;
+            font-size: 80px;
+            left: 30%;
+            top: 10%;
+        }
+        .play-music{
+            position: fixed;
+            left: 37%;
+            margin-top: 22%
+        }
+        .camera{
+            position: fixed;
+            left: 8%;
+            margin-top: 20%;
+        }
+        .football{
+            position: fixed;
+            right: 10%;
+            margin-top: 28%;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <h1 class="heading_style">
+        What will you do?
+    </h1>
+
+    <button class="button_style left" id="img">
+        Take pictures
+    </button>
+
+    <button class="button_style center" >
+        Play music
+    </button>
+
+    <button class="button_style right" >
+        Play football
+    </button>
+
+    <img src="camera-astronaut.png" class="camera" width=26%>
+    <img/>
+
+    <img src="play-music.png" class="play-music" width=21%>
+    <img/>
+
+    <img src="Astronaut.png" class="football" width=26%>
+    <img/>
+
+    <input type="image" id="image_input">
+
+    <div id ="display_image"></div>
+
+    <script>
+        'use strick';
+    
+        document.querySelector('.left').addEventListener('click', function () {
+            var images = document.getElementsByTagName('img') ;
+            var l = images.length;
+            for (var i = 0; i < l; i++) {
+                images[0].parentNode.removeChild(images[0]);
+            }
+            var buttons = document.getElementsByTagName('button') ;
+            var l = buttons.length;
+            for (var i = 0; i < l; i++) {
+                buttons[0].parentNode.removeChild(buttons[0]);
+            }
+            var h1 = document.getElementsByTagName('h1') ;
+            var l = h1.length;
+            for (var i = 0; i < l; i++) {
+                h1[0].parentNode.removeChild(h1[0]);
+            }  
+           });
+        
+        document.querySelector('.right').addEventListener('click', function () {
+            window.location.assign("Doing spacestation.html")
+        });
+        
+        document.querySelector('.center').addEventListener('click', function () {
+            window.location.assign("Doing spacestation.html")
+        });
+        setTimeout("pageRedirect()",1000);
+        </script>
+
+        
+</body>
+
+</html>

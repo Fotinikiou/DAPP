@@ -1,0 +1,68 @@
+<button>
+    monster stealing
+</button><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon monsters</title>
+    <style>
+        body {
+            background-image: url(moon.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        .heading_style {
+            position: fixed;
+            color: white;
+            font-size: 80px;
+            left: 10%;
+            top: 3%;
+        }
+
+        .rocket{
+            position: fixed;
+            right: 10%;
+            margin-top: 24%;
+        }
+
+        .pink {
+            left:10%;
+            margin-top: 36%;
+        }
+
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+    <h1 class = "heading_style">
+        Oh no! 
+        <br> The monster is stealing your rocket.
+    </h1>
+
+    <img src="rocket.png" class="rocket" width=29%>
+    <img/>
+   
+    <marquee  behavior="scroll" direction="right" scrollamount = "15">         
+        <img src= "Orange alien.png" id = "monster" class = "pink" width=18%>
+        
+    </marquee>  
+
+</body>
+
+
+<script>
+    function pageRedirect() {
+        window.location.replace("Throw monster.html");
+    }      
+    setTimeout("pageRedirect()", 5000);
+    </script>
+<script src="Monster stealing.js"></script>
+</html>

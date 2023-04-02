@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon monsters</title>
+    <style>
+        body {
+            background-image: url(moon.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        .play-music{
+            position: fixed;
+            left: 37%;
+            margin-top: 22%
+        }
+    
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+    <img src="play-music.png" class="play-music" width=21%>
+    <img/>
+
+    <audio controls autoplay>
+        <source src="guitar.mp3" type="audio/ogg">
+      
+    </audio>
+
+    <script>
+        function pageRedirect(){
+        window.location.replace("Choose a monster moon.html");
+        }
+        setTimeout("pageRedirect()",8000);
+    </script>
+
+</body>
+
+</html>
