@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon monsters</title>
+    <style>
+        body {
+            background-image: url(moon.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        .football{
+            position: fixed;
+            right: 10%;
+            margin-top: 28%;
+        }
+
+        .ball{
+            right: 30%;
+            margin-top: 43%;
+            
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+  
+    <img src="Astronaut-no-background.png" class="football" width=26%>
+    <img/>
+
+
+    <marquee  behavior="slide" direction="left" width = 72% scrollamount = "14">         
+        <img src= "ball.png"  class = 'ball' width="19%">
+        
+    </marquee>  
+
+    <script>
+        function pageRedirect(){
+        window.location.replace("Choose a monster moon.html");
+        }
+        setTimeout("pageRedirect()",3500);
+    </script>
+   
+</body>
+
+</html>
