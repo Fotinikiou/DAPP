@@ -1,0 +1,27 @@
+{% extends "Choose_and_Tell/index.html" %}
+
+{% block body %} 
+       
+    <div id="loginbox">
+        <div id="loginbox2">
+            {% if message %} 
+                <div>{{ message }}</div> 
+            {% endif %} 
+
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <input class="logininput" type="text" name="username" placeholder="Username">
+                <input class="logininput" type="password" name="password" placeholder="Password">
+                <div id="loginbutton">
+                    <input id="loginbuttonactual" type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+        <div id="loginregister">
+            <a id="loginregisterbutton" href="{% url 'register' %}">Register or reset password</a>
+        </div>
+        
+    </div>
+        
+ 
+{% endblock %}  

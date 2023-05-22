@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars monsters</title>
+    <style>
+        body {
+            background-image: url(mars.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        .left {
+            position: fixed;
+            left: 10%;
+            margin-top: 50%;
+        }
+
+        .center {
+            position: fixed;
+            left: 38%;
+            margin-top: 45%;
+        }
+
+        .right {
+            position: fixed;
+            right: 10%;
+            margin-top: 50%;
+        }
+        .heading_style {
+            position: fixed;
+            color: white;
+            font-size: 80px;
+            left: 30%;
+            top: 10%;
+        }
+        .green_monster{
+            position: fixed;
+            left: 40%;
+            margin-top: 22%
+        }
+        .pink_monster{
+            position: fixed;
+            left: 10%;
+            margin-top: 30%;
+        }
+        .orange_monster{
+            position: fixed;
+            right: 10%;
+            margin-top: 30%;
+        }
+        
+
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 class="heading_style">
+        Choose the monster
+    </h1>
+
+    <button class="button_style left">
+        Pink monster
+    </button>
+
+    <button class="button_style center">
+        Green monster
+    </button>
+
+    <button class="button_style right">
+        Orange monster
+    </button>
+
+    <img src="Green alien.png" class="green_monster" width=18%>
+    <img/>
+
+    <img src="Pink alien.png" class="pink_monster" width=20%>
+    <img/>
+
+    <img src="Orange alien.png" class="orange_monster" width=20%>
+    <img/>
+    
+    <script >'use strict';
+
+        document.querySelector('.left').addEventListener('click', function () {
+            window.location.assign("monster stealing mars.html")
+        });
+        
+        document.querySelector('.right').addEventListener('click', function () {
+            window.location.assign("monster stealing mars.html")
+        });
+        
+        document.querySelector('.center').addEventListener('click', function () {
+            window.location.assign("monster stealing mars.html")
+        });
+        </script>
+        
+</body>
+
+</html>
