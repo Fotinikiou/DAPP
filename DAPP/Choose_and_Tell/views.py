@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -9,8 +9,11 @@ from django.db import IntegrityError
 from .models import User
 
 def home(request):
-    return render(request, "Choose_and_Tell/home.html")
-
+    if request.user.is_authenticated:
+        return render(request, "Choose_and_Tell/home.html")
+    else:
+        return redirect('login')
+    
 def login_user(request):
     if request.method == "POST":
 
