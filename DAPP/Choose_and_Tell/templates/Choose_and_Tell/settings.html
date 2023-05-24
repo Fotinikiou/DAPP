@@ -1,7 +1,14 @@
 {% extends "Choose_and_Tell/index.html" %}
+{% load static %}
 
 {% block body %} 
          
     <h4>Settings Page</h4>
+
+    <input type="range" id="contrast_control" class="form-range" min="0" max="100" value="100" />
  
 {% endblock %} 
+
+{% block script %} 
+    <script src="{% static 'Choose_and_Tell/settings.js' %}"></script>
+{% endblock %}   
