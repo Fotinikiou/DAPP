@@ -1,0 +1,38 @@
+{% extends "Choose_and_Tell/index.html" %}
+{% load static %}
+
+{% block body %}
+
+
+<div id="destination~_body">
+    <h1 class="heading1">
+        Choose the destination
+    </h1>
+
+    <button class="left_destination">
+        Mars
+    </button>
+
+    <button class="center_destination">
+        Space Station
+    </button>
+
+    <button class="right_destination">
+        Moon
+    </button>
+
+    <img src="Mars-destination.png" class="mars" width=30%>
+    <img/>
+
+    <img src="space-station.png" class="space-station" width=20%>
+    <img/>
+
+    <img src="Moon-destination.png" class="moon" width=23%>
+    <img/>
+</div>
+        
+{% endblock %}   
+
+{% block script %} 
+    <script src="{% static 'Choose_and_Tell/settings.js' %}"></script>
+{% endblock %}
