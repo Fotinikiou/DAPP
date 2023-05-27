@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+.button_style {
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    font-family: 'Press Start 2P', sans-serif;
+    padding: 2rem 3rem;
+    cursor: pointer;
+}
+
+.button_style:hover {
+    background-color: white;
+    color: black;
+}
+
+.heading_style {
+    position: fixed;
+    color: black;
+    font-size: 70px;
+    left: 30%;
+    top: 25%;
+}
