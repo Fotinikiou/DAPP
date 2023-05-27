@@ -1,0 +1,21 @@
+{% extends "Choose_and_Tell/index.html" %}
+{% load static %}
+
+{% block body %}
+
+
+
+<div id="choose_travel">
+    <h1>How do you wish to travel?</h1>
+    <a href="{% url 'car' %}">Car</a>
+
+    <a href="{% url 'rocket' %}">Rocket</a>
+
+    <a href="{% url 'boat' %}">Boat</a>
+
+</div>
+{% endblock %}   
+
+{% block script %}   
+    <script src="travel_by.js"></script>
+{% endblock%}
