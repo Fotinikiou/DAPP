@@ -65,3 +65,6 @@ def register(request):
 
 def settings(request):
     return render(request, "Choose_and_Tell/settings.html")
+
+def game(request):
+    return render(request, "Choose_and_Tell/choose_destination_space.html")
