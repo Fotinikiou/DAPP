@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mars monsters</title>
+    <title>Space Station monsters</title>
     <style>
         body {
-            background-image: url(mars.png);
+            background-image: url(spacestation.png);
             background-repeat: no-repeat;
             background-size: cover;
             color: white;
@@ -31,6 +31,7 @@
             right: 10%;
             margin-top: 50%;
         }
+
         .heading_style {
             position: fixed;
             color: white;
@@ -38,25 +39,26 @@
             left: 30%;
             top: 10%;
         }
-        .green_monster{
+
+        .green_monster {
             position: fixed;
             left: 40%;
             margin-top: 22%
         }
-        .pink_monster{
+
+        .pink_monster {
             position: fixed;
             left: 10%;
             margin-top: 30%;
         }
-        .orange_monster{
+
+        .orange_monster {
             position: fixed;
             right: 10%;
             margin-top: 30%;
         }
-        
-
     </style>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body>
@@ -77,29 +79,28 @@
     </button>
 
     <img src="Green alien.png" class="green_monster" width=18%>
-    <img/>
+    <img />
 
     <img src="Pink alien.png" class="pink_monster" width=20%>
-    <img/>
+    <img />
 
     <img src="Orange alien.png" class="orange_monster" width=20%>
-    <img/>
-    
-    <script >'use strict';
+    <img />
+
+    <script>'use strict';
 
         document.querySelector('.left').addEventListener('click', function () {
-            window.location.assign("monster stealing mars.html")
+            window.location.assign("monster stealing spacestation.html")
         });
-        
+
         document.querySelector('.right').addEventListener('click', function () {
-            window.location.assign("monster stealing mars.html")
+            window.location.assign("monster stealing spacestation.html")
         });
-        
+
         document.querySelector('.center').addEventListener('click', function () {
-            window.location.assign("monster stealing mars.html")
+            window.location.assign("monster stealing spacestation.html")
         });
-        </script>
-        
+    </script>
 </body>
 
 </html>
