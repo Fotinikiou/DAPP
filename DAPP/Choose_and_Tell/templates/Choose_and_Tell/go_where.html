@@ -1,46 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "Choose_and_Tell/index.html" %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Where will you go?</title>
-    <style>
-        body {
-            background-image: url(background_pics/go_where.PNG);
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
-            /*Do we need to use those two???*/
-            background-position: center;
-            background-attachment: fixed;
-        }
+{% block body %}
 
-        .left {
-            position: fixed;
-            left: 24%;
-            margin-top: 40%;
-        }
-
-        /* this is a left button*/
-
-        .center {
-            position: fixed;
-            left: 42.5%;
-            margin-top: 40%;
-        }
-
-        .right {
-            position: fixed;
-            left: 59%;
-            margin-top: 40%;
-        }
-    </style>
-    <link rel="stylesheet" href="../../styles.css">
-</head>
-
-<body>
+<div id="go_where_body">
     <h1 class="heading_style">
         Where will you go?
     </h1>
@@ -56,8 +19,10 @@
     <button class="button_style right">
         Camping
     </button>
+</div>
 
+{% endblock %}
+
+{% block script %}
     <script src="go_where.js"></script>
-</body>
-
-</html>
+{% endblock %}

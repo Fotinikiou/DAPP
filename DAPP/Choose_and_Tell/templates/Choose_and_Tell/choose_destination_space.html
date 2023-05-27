@@ -4,7 +4,7 @@
 {% block body %}
 
 
-<div id="destination~_body">
+<div class="destination_body">
     <h1 class="heading1">
         Choose the destination
     </h1>
@@ -30,7 +30,37 @@
     <img src="{% static 'Choose_and_Tell/Pictures/Moon-destination.png' %}" class="moon" width=23%>
     <img/>
 </div>
-        
+
+<div class="space-station-chosen">
+    <h1 class="heading_style">
+        What will you do?
+    </h1>
+
+    <button class="button_style left" id="img">
+        Take pictures
+    </button>
+
+    <button class="button_style center" >
+        Play music
+    </button>
+
+    <button class="button_style right" >
+        Play football
+    </button>
+
+    <img src="camera-astronaut.png" class="camera" width=26%>
+    <img/>
+
+    <img src="play-music.png" class="play-music" width=21%>
+    <img/>
+
+    <img src="Astronaut.png" class="football" width=26%>
+    <img/>
+
+    <input type="image" id="image_input">
+
+    <div id ="display_image"></div>
+</div>
 {% endblock %}   
 
 {% block script %} 

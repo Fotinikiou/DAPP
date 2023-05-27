@@ -150,3 +150,42 @@
 }
 
 /* END OF CHOOSE DESTINATION CSS */
+
+/* GO where CSS (car)*/
+
+#go_where_body {
+    background-image: url("{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*Do we need to use those two???*/
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1 {
+    color: black; 
+}
+    
+
+
+.left {
+    position: fixed;
+    left: 24%;
+    margin-top: 40%;
+}
+
+/* this is a left button*/
+
+.center {
+    position: fixed;
+    left: 42.5%;
+    margin-top: 40%;
+}
+
+.right {
+    position: fixed;
+    left: 59%;
+    margin-top: 40%;
+}
+
+/* end of go where (car) css */

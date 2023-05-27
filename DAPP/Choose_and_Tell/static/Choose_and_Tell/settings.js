@@ -13,6 +13,25 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
+//for space station
+
+window.onpopstate = (function() {
+    document.querySelector('#destination_body').style.display = 'block';
+    document.querySelector('#space-station-chosen').style.display = 'none';
+  });
+        
+//document.querySelector('#center_destination').addEventListener('click', () => {
+ //   document.querySelector('#destination_body').style.display = 'none';
+   // document.querySelector('#space-station-chosen').style.display = 'block';
+  //  });
+
+
+
+
+
+
+
+
 
 
     //Choose destination javascript
