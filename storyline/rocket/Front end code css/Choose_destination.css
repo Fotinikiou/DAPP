@@ -1,0 +1,60 @@
+
+
+.left_des {
+    position: fixed;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    left: 15%;
+    top: 23%;
+    font-size: 40px;
+    margin-top: 40%;
+    display: flex;
+}
+.left:hover{
+    background-color: white;
+    color: black;
+
+}
+
+.right {
+    position: fixed;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    right: 13%;
+    top:23%;
+    font-size: 40px;
+    margin-top: 40%;
+    display: flex;
+}
+.right:hover{
+    background-color: white;
+    color: black;
+}
+
+.center {
+    position: fixed;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    left: 40%;
+    top: 13%;
+    font-size: 40px;
+    margin-top: 40%;
+    display: flex;
+}
+.center:hover{
+    background-color: white;
+    color: black;
+}
+
+.heading1{
+    font-size: 70px;
+    position: fixed;
+    left: 28%;
+    top:17%;
+}
