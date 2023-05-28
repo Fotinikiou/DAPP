@@ -67,4 +67,13 @@ def settings(request):
     return render(request, "Choose_and_Tell/settings.html")
 
 def game(request):
+    return render(request, "Choose_and_Tell/travel_by.html")
+
+def car(request):
+    return render(request, "Choose_and_Tell/go_where.html") #needs to be changed for car storyline
+
+def rocket(request):
     return render(request, "Choose_and_Tell/choose_destination_space.html")
+
+def boat(request):
+    return render(request, "Choose_and_Tell/choose_destination_space.html") #needs to be changed for car storyline
