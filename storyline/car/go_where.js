@@ -2,8 +2,8 @@
 
 function changeBackground(image) {
     // this fucntion can a backgroud iamge
-    const container = document.querySelector('.container');
-    container.style.backgroundImage = `url(${image})`;
+    const body = document.querySelector('body');
+    body.style.backgroundImage = `url(${image})`;
 }
 
 function showPage(page) {
@@ -12,8 +12,15 @@ function showPage(page) {
     new_page.style.display = 'block';
 }
 
+//initialize the page
 showPage("go_where")
+changeBackground("background_pics/go_where.PNG")
 
-document.querySelector('.left').addEventListener('click', function () {
-    window.location.assign("thief.html")
-});
+
+if (document.querySelector('.left').addEventListener('click', function () {
+   return true
+}))
+{
+    showPage();
+    changeBackground(background_pics/shopping_mall.jpg);
+}
