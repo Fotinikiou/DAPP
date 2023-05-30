@@ -14,14 +14,6 @@
             color: white;
         }
 
-        .heading_style {
-            position: fixed;
-            color: white;
-            font-size: 80px;
-            left: 30%;
-            top: 10%;
-        }
-
         .space-station {
             position: fixed;
             left: 40%;
@@ -39,14 +31,37 @@
             right: 5%;
             margin-top: 33%;
         }
+
+        div{
+            display: none;
+        }
+
+        
     </style>
     <link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body>
-    <h1 class="heading1">
-        Choose the destination
-    </h1>
+    <div id = "choose_destination">
+        <h1 class="heading1">
+            Choose the destination
+        </h1>
+    
+        <img src="items/Mars-destination.png" class="mars" width=30%>
+        <img />
+    
+        <img src="items/space-station.png" class="space-station" width=20%>
+        <img />
+    
+        <img src="items/Moon-destination.png" class="moon" width=23%>
+        <img />
+    </div>
+
+    <div id = "travel_to_spacestation">
+        <marquee  behavior="scroll" direction="down" height="600" scrollamount = "15">         
+            <img src= "rocket.png" class = "rocket" width=29%>
+        </marquee> 
+    </div>
 
     <button class="left button_style">
         Mars
@@ -60,29 +75,10 @@
         Moon
     </button>
 
-    <img src="items/Mars-destination.png" class="mars" width=30%>
-    <img />
 
-    <img src="items/space-station.png" class="space-station" width=20%>
-    <img />
-
-    <img src="items/Moon-destination.png" class="moon" width=23%>
-    <img />
-
-    <script>
-
-        document.querySelector('.left').addEventListener('click', function () {
-            window.location.replace("Travelling to destination mars.html")
-        });
-
-        document.querySelector('.right').addEventListener('click', function () {
-            window.location.replace("Travelling to destination moon.html")
-        });
-
-        document.querySelector('.center').addEventListener('click', function () {
-            window.location.replace("Travelling to destination space-station.html")
-        });
+    <script src="../../../functions.js">
     </script>
+    <script src="rocket.js"></script>
 
 </body>
 
