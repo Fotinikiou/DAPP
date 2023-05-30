@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
+
+
+    
 //for space station
 
 window.onpopstate = (function() {
@@ -24,14 +27,6 @@ window.onpopstate = (function() {
  //   document.querySelector('#destination_body').style.display = 'none';
    // document.querySelector('#space-station-chosen').style.display = 'block';
   //  });
-
-
-
-
-
-
-
-
 
 
     //Choose destination javascript
