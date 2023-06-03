@@ -35,8 +35,23 @@
         div{
             display: none;
         }
-
         
+        .play-music{
+            position: fixed;
+            left: 37%;
+            margin-top: 22%
+        }
+        .camera{
+            position: fixed;
+            left: 8%;
+            margin-top: 20%;
+        }
+        .football{
+            position: fixed;
+            right: 10%;
+            margin-top: 28%;
+        }
+
     </style>
     <link rel="stylesheet" href="../../../styles.css">
 </head>
@@ -59,8 +74,21 @@
 
     <div id = "travel_to_spacestation">
         <marquee  behavior="scroll" direction="down" height="600" scrollamount = "15">         
-            <img src= "rocket.png" class = "rocket" width=29%>
+            <img src= "items/rocket.png" class = "rocket" width=29%>
         </marquee> 
+    </div>
+
+    <div>
+        <h1 class="heading_style">
+            What will you do?
+        </h1>
+        <img src="camera-astronaut.png" class="camera" width=26%>
+        <img/>
+        <img src="play-music.png" class="play-music" width=21%>
+        <img/>
+        <img src="Astronaut.png" class="football" width=26%>
+        <img/>
+        
     </div>
 
     <button class="left button_style">
@@ -75,9 +103,7 @@
         Moon
     </button>
 
-
-    <script src="../../../functions.js">
-    </script>
+    <script src="../../../functions.js"></script>
     <script src="rocket.js"></script>
 
 </body>
