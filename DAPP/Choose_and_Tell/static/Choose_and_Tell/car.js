@@ -25,8 +25,7 @@ document.querySelector('.left').addEventListener('click', function () {
             disapearButton('right');
         });
     });
-}})
-;
+}}); 
 
 
 
@@ -51,6 +50,16 @@ document.querySelectorAll('.center, .right').forEach(function(element) {
             changeButtonText('left', "Bear");
             changeButtonText('center', "Tiger");
             changeButtonText('right', "Wolf");
+            const top = "20vh"
+            const bear = document.getElementById('bear');
+            bear.style.left = '20vw';
+            bear.style.top = top;
+            const tiger = document.getElementById('tiger');
+            tiger.style.left = '50vw';
+            tiger.style.top = top;
+            const wolf = document.getElementById('wolf');
+            wolf.style.left = '80vh';
+            wolf.style.top = top;
 
             document.querySelectorAll('.left, .center, .right').forEach(function(element) {
                 // lead to the page of the thief storyline.
@@ -74,4 +83,4 @@ document.querySelectorAll('.center, .right').forEach(function(element) {
         })
 })
 }})
-});
+}); 
