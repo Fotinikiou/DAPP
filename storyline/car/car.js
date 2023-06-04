@@ -6,9 +6,10 @@ changeBackground("background_pics/go_where.PNG");
 
 
 var isFirstBlockExecuted = false;
+var isSecondBlcokExecuted = false;
 
 document.querySelector('.left').addEventListener('click', function () {
-    if (!isFirstBlockExecuted) {
+    if (!isFirstBlockExecuted and !isSecondBlcokExecuted) {
         isFirstBlockExecuted = true;
     // if left button cliked, change something
     disappearPage('go_where');
