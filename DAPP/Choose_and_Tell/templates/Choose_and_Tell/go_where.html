@@ -3,7 +3,7 @@
 
 {% block body %}
 
-<div id="go_where_body">
+<!--<div id="go_where_body"> 
     <h1 class="heading_style">
         Where will you go?
     </h1>
@@ -19,7 +19,91 @@
     <button class="button_style right">
         Camping
     </button>
-</div>
+</div>  --> 
+
+<title>Car Travel</title>
+<!--> <img src="{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}">*/ -->
+   <style>
+
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            /*Do we need to use those two???*/
+            background-position: center;
+            background-attachment: fixed;
+            /* background-image:"{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}"; */
+        }
+
+        .left {
+            position: fixed;
+            left: 24%;
+            margin-top: 40%;
+        }
+
+        /* this is a left button*/
+
+        .center {
+            position: fixed;
+            left: 42.5%;
+            margin-top: 40%;
+        }
+
+        .right {
+            position: fixed;
+            left: 59%;
+            margin-top: 40%;
+        }
+
+        div{
+            display: none;
+        }
+
+    </style>
+    <link rel="stylesheet" href="../../styles.css">
+
+    <body>
+        <div id="go_where">
+            <h1 class="heading_style">
+                Where will you go?
+            </h1>
+        </div>
+    
+        <div id = "they_are_going">
+            <h1 class="heading_style">
+                They are going to...
+            </h1>
+        </div>
+    
+        <div id = 'beast'>
+            <h1 class="heading_style">
+                And they meet a...
+            </h1>
+        </div>
+    
+        <div id = "animal_leave">
+            <h1 class = "heading_style">
+                The animal Leave
+            </h1>
+        </div>
+    
+    
+    
+        <button class="button_style left">
+            Shopping Mall
+        </button>
+    
+        <button class="button_style center">
+            Mountain
+        </button>
+    
+        <button class="button_style right">
+            Camping
+        </button>
+        <script src="../../functions.js"></script>
+        <script src="car.js"></script>
+    </body>
+    
 
 {% endblock %}
 

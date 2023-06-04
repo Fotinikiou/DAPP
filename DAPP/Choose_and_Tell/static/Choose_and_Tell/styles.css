@@ -168,9 +168,9 @@
 /* GO where CSS (car)*/
 
 #go_where_body {
-    background-image: url("{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}");
+    background-image: url("{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}");  
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% auto;
     /*Do we need to use those two???*/
     background-position: center;
     background-attachment: fixed;
