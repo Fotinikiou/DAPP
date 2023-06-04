@@ -1,8 +1,35 @@
 'use strick';
+function changeBackground(image) {
+    // this fucntion can a backgroud iamge
+    const body = document.querySelector('body');
+    body.style.backgroundImage = `url(${image})`;
+}
+
+function showPage(page) {
+    const new_page = document.querySelector(`#${page}`)
+    // show page(div) with spsific id, id is the input
+    new_page.style.display = 'block';
+}
+
+function disappearPage(page){
+    const new_page = document.querySelector(`#${page}`)
+    // make page(div) disapear with spsific id, id is the input
+    new_page.style.display = 'none';
+}
+
+function changeButtonText(name, newtext) {
+    const button = document.querySelector(`.${name}`);
+    button.textContent = newtext;
+  }
+
+function disapearButton(name){
+    const button = document.querySelector(`.${name}`);
+    button.style.display = 'none';
+}
 
 //initialize the page
 showPage("go_where");
-changeBackground("background_pics/go_where.PNG");
+changeBackground("{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}");
 
 
 var isFirstBlockExecuted = false;
@@ -12,14 +39,14 @@ document.querySelector('.left').addEventListener('click', function () {
         isFirstBlockExecuted = true;
     // if left button cliked, change something
     disappearPage('go_where');
-    changeBackground("background_pics/shopping_mall.jpg");
+    changeBackground("{% static 'Choose_and_Tell/Pictures/shopping_mall.jpg' %}");
     changeButtonText("left", "Set a trap")
     changeButtonText("right", "Ask for help")
     changeButtonText("center", "Chase him")
     document.querySelectorAll('.left, .center, .right').forEach(function(element) {
         // lead to the final page of the thief storyline.
         element.addEventListener('click', function() {
-            changeBackground("background_pics/thief_ending.jpeg");
+            changeBackground("{% static 'Choose_and_Tell/Pictures/thief_ending.jpeg' %}");
             disapearButton('left');
             disapearButton('center');
             disapearButton('right');
