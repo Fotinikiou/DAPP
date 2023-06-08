@@ -52,6 +52,10 @@
     text-decoration: none;
 }
 
+.settings_button:hover{
+    color: #555;
+}
+
 .larger-icon {
     font-size: 30px; /* Adjust the size as needed */
   }
