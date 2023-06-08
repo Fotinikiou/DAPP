@@ -15,6 +15,14 @@
     </head>
     <body id="body">
         <div id="temporary">
+            <div id="homebuttonbox">
+                <a class="settings_button" href="{% url 'home' %}">
+                    <i class="fas fa-home larger-icon"></i>
+                </a>
+            </div>
+            <div id="main_title">
+                <h4 id="actual_title">Choose and Tell</h4>
+            </div>
             <div id="user">
                 {% if user.is_authenticated %} 
                     <span style="color: #050504">Welcome </span><strong id="username">{{ user.username }}</strong><span>!</span>
@@ -26,11 +34,8 @@
                     <a class='log' href="{% url 'login' %}">Login</a>
                 {% endif %}
             </div>
-            <div id="main_title">
-                <h4 id="actual_title">Choose and Tell</h4>
-            </div>
             <div id="settingsbox">
-                <a id="settings_button" href="{% url 'settings' %}">
+                <a class="settings_button" href="{% url 'settings' %}">
                     <i class="fas fa-cog larger-icon"></i>
                 </a>
             </div>    

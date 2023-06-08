@@ -12,10 +12,10 @@
     height: 80px;
 }
 
-#user {
+#homebuttonbox{
     position: relative;
-    top:25%;
-    left:1%;
+    top:32%;
+    left:2%;
 }
 
 .log {
@@ -25,7 +25,7 @@
 
 #main_title{
     text-align: center;
-    margin-top: -35px;
+    margin-top: -18px;
 }
 
 #actual_title{
@@ -35,10 +35,16 @@
 #settingsbox {
     position:absolute;
     right: 3%;
+    top: 3.5%;
+}
+
+#user {
+    position:absolute;
+    right: 7%;
     top: 3%;
 }
 
-#settings_button {
+.settings_button {
     background: none;
     border: none;
     cursor: pointer;
