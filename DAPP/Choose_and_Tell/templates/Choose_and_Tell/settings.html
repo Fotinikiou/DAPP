@@ -7,27 +7,38 @@
 
     <div class="slider">
         <div class="box">
-            <span class="adjustment_title">Contrast Slider</span>
+            <span class="adjustment_title">Contrast</span>
             <div class="inner_box">
                 <i class="fa fa-adjust" aria-hidden="true"></i>
                 <input type="range" id="contrast_control"  min="0" max="200" value="100" />
+                <span>100</span>
             </div>
         </div>
         <div class="box">
-            <span class="adjustment_title">Brightness Slider</span>
+            <span class="adjustment_title">Brightness</span>
             <div class="inner_box">
                 <i class="fa fa-sun-o" aria-hidden="true"></i>
-                <input type="range" id="brightness_control" min="0" max="200" value="100" />
+                <input type="range" id="brightnes_control"  min="0" max="200" value="100" />
+                <span>100</span>
+            </div>
+        </div>
+        <div class="box">
+            <span class="adjustment_title">Text Clarity</span>
+            <div class="inner_box">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="range" id="bold_control" min="0" max="200" value="100" />
+                <span>100</span>
+            </div>
+        </div>
+        <div class="box">
+            <span class="adjustment_title">Text Size</span>
+            <div class="inner_box">
+                <i class="fa fa-text-height" aria-hidden="true"></i>
+                <input type="range" id="text_size_control" min="0" max="200" value="100" />
+                <span>100</span>
             </div>
         </div>
     </div>
-    
-    <span id="bold_title">Text Clarity Slider</span>
-    <input type="range" id="bold_control" class="form-range" min="0" max="200" value="100" />
-
-    
-    <span id="size_title">Alter Text Size (NOT FINISHED)</span>
-    <input type="range" id="text_size_control" class="form-range" min="15" max="20" value="17" />
 
 {% endblock %} 
 
