@@ -2,54 +2,24 @@
 {% load static %}
 
 {% block body %}
-
-<script>
-    console.log("JavaScript is working!");
-    </script>    
-
-
-<div id="go_where">
-    <h1 class="heading_style">
-        Where will you go?
-    </h1>
+<div class="go_where">
+    <div id="go_where_heading">
+        <h6  class="heading_style">Where will you go?</h6>
+    </div>
+    
+    
+    <button class="button_style left">
+        Shopping Mall
+    </button>
+    
+    <button class="button_style center">
+       Mountain
+    </button>
+    
+    <button class="button_style right">
+        Camping
+    </button>
 </div>
-
-<div id = "they_are_going">
-    <h1 class="heading_style">
-       They are going to...
-    </h1>
-</div>
-
-<div id = 'beast'>
-    <h1 class="heading_style">
-        And they meet a...
-    </h1>
-    <img src="items/bear_vector.png" class="pic" id="bear" width="30%">
-    <img src="items/tiger_vector.png" class="pic" id = "tiger" width="30%">
-    <img src="items/wolf_vector.png" class="pic" id = "wolf" width="30%">
-</div>
-
-<div id = "animal_leave">
-    <h1 class = "heading_style">
-        The animal Leave
-    </h1>
-</div>
-
-
-
-<button class="button_style left">
-    Shopping Mall
-</button>
-
-<button class="button_style center">
-   Mountain
-</button>
-
-<button class="button_style right">
-    Camping
-</button>
-<!--<script src="../../functions.js"></script>-->
-  <!--  <script src="car.js"></script>-->
 
 {% endblock %}
 

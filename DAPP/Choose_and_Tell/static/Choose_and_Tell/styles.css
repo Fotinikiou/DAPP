@@ -150,13 +150,7 @@
     right: 10%;
     margin-top: 50%;
 }
-.heading_style {
-    position: fixed;
-    color: white;
-    font-size: 80px;
-    left: 30%;
-    top: 10%;
-}
+
 .space-station{
     position: fixed;
     left: 40%;
@@ -180,14 +174,13 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
 .go_where {
-    background-image: url("{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}"); 
+    background-image: "{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}";
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    /*Do we need to use those two???*/
     background-position: center center;
     background-attachment: fixed;
-}
+} 
 
 /* div{
     display: none;
@@ -209,11 +202,12 @@
 
 .heading_style {
     position: fixed;
-    color: black;
-    font-size: calc(3.5vw + 3.5vh);
+    color: white;
+    font-size: 40px;
     left: 50vw;
-    top: 25vh;
+    top: 20vh;
     transform: translate(-50%, -50%);
+    font-family: "Arial Black", sans-serif;
 }
 
 /* style for the button at left  */
