@@ -232,6 +232,9 @@
     display: flex;
 }
 .left:hover {
+    position: fixed;
+    left: 20vw;
+    top: 70vh;
     background-color: white;
     color: black;
 
@@ -251,6 +254,9 @@
     transform: translate(-50%, -50%);
 }
 .right:hover {
+    position: fixed;
+    left: 80vw;
+    top: 70vh;
     background-color: white;
     color: black;
 }
@@ -269,6 +275,9 @@
     transform: translate(-50%, -50%);
 }
 .center:hover {
+    left: 50vw;
+    top: 70vh;
+    position: fixed;
     background-color: white;
     color: black;
 }
