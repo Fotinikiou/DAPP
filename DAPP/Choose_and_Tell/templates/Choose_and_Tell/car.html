@@ -2,12 +2,16 @@
 {% load static %}
 
 {% block body %}
+
 <div class="go_where">
+    <br>
     <div id="go_where_heading">
         <h6  class="heading_style">Where will you go?</h6>
     </div>
-    
-    
+    <br>
+    <br>
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}">
+        
     <button class="button_style left">
         Shopping Mall
     </button>
@@ -20,9 +24,11 @@
         Camping
     </button>
 </div>
-
 {% endblock %}
-
 {% block script %}
-    <script src="{% static 'Choose_and_Tell/car.js' %}"></script>
+
+ <script src="{% static 'Choose_and_Tell/car.js' %}"> </script>
+
+
+      
 {% endblock %}

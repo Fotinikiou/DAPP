@@ -1,8 +1,7 @@
-function changeBackground(image, div) {
-    const body = document.querySelector(`.${div}`);
-    body.style.backgroundImage = `url(${image})`;
-
-  }
+function backgroundColour(colour) {
+    const element = document.querySelector('body');
+    element.style.backgroundColor = colour;
+}
 
 function showPage(page) {
     const new_page = document.querySelector(`.${page}`);
@@ -13,10 +12,14 @@ function showPage(page) {
     }
   }
 
-document.addEventListener('DOMContentLoaded', function() {
-    changeBackground("{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}", "go_where");
-    showPage("go_where");
-    console.log('JavaScript working');
+const image1 = "{% static 'Choose_and_Tell/Pictures/go_where.png' %}";
+
+
+document.addEventListener('DOMContentLoaded', function() { 
+
+   // GO_WHERE (first page of car)
+   showPage("go_where");
+   backgroundColour("white");
   });
   
   

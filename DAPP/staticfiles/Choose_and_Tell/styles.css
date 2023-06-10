@@ -1,0 +1,336 @@
+#body{
+    width: 100%;
+    height:100%;
+    background-color: rgb(227, 192, 250)
+}
+
+
+#temporary {
+    
+   background-color: #be6fff;
+    width: 100%;
+    height: 80px;
+}
+
+#homebuttonbox{
+    position: relative;
+    top:32%;
+    left:2%;
+}
+
+.log {
+    margin-top:20%;
+    font-size: 12px;
+}
+
+#main_title{
+    text-align: center;
+    margin-top: -18px;
+}
+
+#actual_title{
+    font-size: 40px;
+}
+
+#settingsbox {
+    position:absolute;
+    right: 3%;
+    top: 3.5%;
+}
+
+#user {
+    position:absolute;
+    right: 7%;
+    top: 3%;
+}
+
+.settings_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.settings_button:hover{
+    color: #555;
+}
+
+.larger-icon {
+    font-size: 30px; /* Adjust the size as needed */
+  }
+
+
+#loginbox{
+    width:30%;
+    margin-left: 35%;
+    margin-right:35%;
+    height: 300px;
+    border: 8px solid black;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5%;
+    margin-top: -30px;;
+    position:absolute;
+    background-color: white;
+}
+
+#loginbox2{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 12%;
+    position:relative;
+    left:-1%;
+}
+
+#login_message{
+    width: 30%;
+    font-size: 30px;
+    margin-left: 60px;
+    margin-right: 40px;
+    margin-top: 35px;
+}
+
+.logininput{
+    width: 100%;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+    background-color: rgb(236, 234, 234);
+}
+
+#loginbutton{
+    width:80%;
+    margin-left:20%;
+    margin-right:20%;
+    position:relative;
+    left:25%;
+}
+
+#loginbuttonactual {
+    border-radius: 8px;
+}
+
+#loginregister {
+    width: auto;
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-right: 50px;
+}
+
+#loginregisterbutton {
+    margin-left: auto;
+    margin-right: auto;
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* CHOOSE DESTINATION CSS */
+#destination_body {
+    background-image: url(space.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+.left_destination {
+    position: fixed;
+    left: 10%;
+    margin-top: 50%;
+}
+
+.center_destination {
+    position: fixed;
+    left: 38%;
+    margin-top: 45%;
+}
+
+.right_destination {
+    position: fixed;
+    right: 10%;
+    margin-top: 50%;
+}
+
+.space-station{
+    position: fixed;
+    left: 40%;
+    margin-top: 22%
+}
+.mars{
+    position: fixed;
+    left: 5%;
+    margin-top: 35%;
+}
+.moon{
+    position: fixed;
+    right: 5%;
+    margin-top: 33%;
+}
+
+/* END OF CHOOSE DESTINATION CSS */
+
+/* GO where CSS (car)*/
+
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+.go_where {
+    /*background-image: "{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}";/*
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    background-position: center center;
+    background-attachment: fixed;
+} 
+
+/* div{
+    display: none;
+} */
+
+.button_style {
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    font-family: 'Press Start 2P', sans-serif;
+    padding: 2rem 3rem;
+    cursor: pointer;
+}
+.button_style:hover {
+    background-color: white;
+    color: black;
+}
+
+.heading_style {
+    position: fixed;
+    color: white;
+    font-size: 40px;
+    left: 50vw;
+    top: 20vh;
+    transform: translate(-50%, -50%);
+    font-family: "Arial Black", sans-serif;
+}
+
+/* style for the button at left  */
+.left {
+    position: fixed;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    left: 20vw;
+    top: 70vh;
+    transform: translate(-50%, -50%);
+    font-size: 1.5vw;
+    display: flex;
+}
+.left:hover {
+    background-color: white;
+    color: black;
+
+}
+
+/* style for the right button */
+.right {
+    position: fixed;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    left: 80vw;
+    top: 70vh;
+    font-size: 1.5vw;
+    display: flex;
+    transform: translate(-50%, -50%);
+}
+.right:hover {
+    background-color: white;
+    color: black;
+}
+
+/* style for the centre button */
+.center {
+    position: fixed;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    left: 50vw;
+    top: 70vh;
+    font-size: 1.5vw;
+    display: flex;
+    transform: translate(-50%, -50%);
+}
+.center:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.heading1 {
+    font-size: 70px;
+    position: fixed;
+    left: 28%;
+    top: 17%;
+}
+
+.pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pic img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+
+/* end of go where (car) css */
+
+
+/*SETTINGS JAVASCRIPT*/
+.slider{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.slider .box{
+    padding: 20px;
+    background: white;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #0005;
+}
+
+.box .adjustment_title {
+    text-transform: uppercase;
+}
+
+.box .inner_box{
+    width: 350px;
+    height:40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inner_box input{
+    width: 100%;
+    height: 2px;
+    -webkit-appearance: none;
+    background: #be6fff;
+    margin: 0 10px;
+    outline: none;
+}
+
+.inner_box input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #be6fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+}
