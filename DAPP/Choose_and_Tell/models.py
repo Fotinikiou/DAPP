@@ -9,21 +9,21 @@ class User(AbstractUser):
 
 class Person(models.Model):
     player = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "player", blank = True)
-    image = models.ImageField(upload_to='person_images', null=True, blank=True)
-    contrast_setting = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    speed = models.DecimalField(max_digits=5, decimal_places=2)
-    preference = models.CharField(max_length=10, choices=(
-        ('mouse', 'Mouse'),
-        ('button', 'Button'),
-    ))
+    #image = models.ImageField(upload_to='person_images', null=True, blank=True)
+    text_clarity_setting = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    #speed = models.DecimalField(max_digits=5, decimal_places=2)
+    #preference = models.CharField(max_length=10, choices=(
+       # ('mouse', 'Mouse'),
+        #('button', 'Button'),
+   # ))
 
-    def save(self):
-        super().save()
-        img = Image.open(self.image.path)
-        if img.width > 150 or img.height > 150:
-            new_dim = (150, 150)
-            img.thumbnail(new_dim)
-            img.save(self.image.path) 
+    def save(self, *args, **kwargs):
+        kwargs.pop('force_insert', None)
+        super().save(*args, **kwargs)
 
-    def __str__(self):
-        return str(self.player)
+    def serialize(self):
+        return {
+            "id": self.id,
+            "player": self.player,
+            "text_clarity": self.text_clarity_setting
+        }

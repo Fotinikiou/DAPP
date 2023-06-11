@@ -1,7 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
-# from .models import User
 
-class UserAdmin(admin.ModelAdmin):
-    list_display=('')
+from .models import *
+
+
+
+class PersonAdmin(admin.ModelAdmin):
+    list_display=('id', 'player', 'text_clarity_setting' )
+
+admin.site.register(User)
+admin.site.register(Person, PersonAdmin)

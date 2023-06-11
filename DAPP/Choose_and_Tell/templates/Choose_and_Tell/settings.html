@@ -6,38 +6,42 @@
     <h4 class="settings_title">Settings Page</h4>
 
     <div class="slider">
-        <div class="box">
-            <span class="adjustment_title">Contrast</span>
-            <div class="inner_box">
-                <i class="fa fa-adjust" aria-hidden="true"></i>
-                <input type="range" id="contrast_control"  min="0" max="200" value="100" />
-                <span>100</span>
+        <form id="submit_settings" action="{% url 'settings' %}" method="post">
+            {% csrf_token %}
+            <div class="box">
+                <span class="adjustment_title">Contrast</span>
+                <div class="inner_box">
+                    <i class="fa fa-adjust" aria-hidden="true"></i>
+                    <input type="range" id="contrast_control"  min="0" max="200" value="100" />
+                    <span>100</span>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <span class="adjustment_title">Brightness</span>
-            <div class="inner_box">
-                <i class="fa fa-sun-o" aria-hidden="true"></i>
-                <input type="range" id="brightnes_control"  min="0" max="200" value="100" />
-                <span>100</span>
+            <div class="box">
+                <span class="adjustment_title">Brightness</span>
+                <div class="inner_box">
+                    <i class="fa fa-sun-o" aria-hidden="true"></i>
+                    <input type="range" id="brightnes_control"  min="0" max="200" value="100" />
+                    <span>100</span>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <span class="adjustment_title">Text Clarity</span>
-            <div class="inner_box">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <input type="range" id="bold_control" min="0" max="200" value="100" />
-                <span>100</span>
+            <div class="box">
+                <span class="adjustment_title">Text Clarity</span>
+                <div class="inner_box">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input type="range" id="bold_control" min="0" max="200" value="100" name="boldness" />
+                    <span>100</span>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <span class="adjustment_title">Text Size</span>
-            <div class="inner_box">
-                <i class="fa fa-text-height" aria-hidden="true"></i>
-                <input type="range" id="text_size_control" min="0" max="200" value="100" />
-                <span>100</span>
+            <div class="box">
+                <span class="adjustment_title">Text Size</span>
+                <div class="inner_box">
+                    <i class="fa fa-text-height" aria-hidden="true"></i>
+                    <input type="range" id="text_size_control" min="0" max="200" value="100" />
+                    <span>100</span>
+                </div>
             </div>
-        </div>
+            <button type="submit" id="settings_submit_button">Submit</button>
+        </form> 
     </div>
 
 {% endblock %} 
