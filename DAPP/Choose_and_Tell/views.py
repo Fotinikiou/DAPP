@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
-from .models import User
+from .models import User, Person
 
 def home(request):
     if request.user.is_authenticated:
@@ -64,7 +65,17 @@ def register(request):
         return render(request, "Choose_and_Tell/register.html")
 
 def settings(request):
-    return render(request, "Choose_and_Tell/settings.html")
+    if request.method =="POST":
+        boldness = request.POST["boldness"]
+        player = request.user
+        person, created = Person.objects.get_or_create(player=player)
+
+        # Update the text_clarity_setting field with the boldness value
+        person.text_clarity_setting = boldness
+        person.save()
+        return render(request, "Choose_and_Tell/home.html")
+    else:
+        return render(request, "Choose_and_Tell/settings.html")
 
 def game(request):
     return render(request, "Choose_and_Tell/travel_by.html")
@@ -77,3 +88,22 @@ def rocket(request):
 
 def boat(request):
     return render(request, "Choose_and_Tell/choose_destination_space.html") #needs to be changed for car storyline
+
+def get_tc(request):
+    if request.method == 'POST':
+        text_clarity = request.POST.get('text_clarity')
+        user = request.user
+        person, created = Person.objects.get_or_create(player=user)
+        person.text_clarity_setting = text_clarity
+        person.save()
+        return JsonResponse({
+            'message': 'TC saved successfully'
+        })
+    
+def save_tc(request):
+    user = request.user
+    try:
+        person = Person.objects.get(player=user)
+        return JsonResponse(person.serialize())
+    except Person.DoesNotExist:
+        return JsonResponse({'text_clarity': None})

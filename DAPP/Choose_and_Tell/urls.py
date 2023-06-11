@@ -1,6 +1,6 @@
 from django.urls import path 
 
-from Choose_and_Tell import views
+from . import views
 
 
 urlpatterns  = [  
@@ -12,7 +12,11 @@ urlpatterns  = [
     path('game', views.game, name='game'),
     path('car', views.car, name='car'),
     path('rocket', views.rocket, name='rocket'),
-    path('boat', views.boat, name='boat')
+    path('boat', views.boat, name='boat'),
+
+    # API URLS
+    path('save_text_clarity_setting', views.save_tc, name='save_text_clarity_setting'),
+    path('get_text_clarity_setting', views.get_tc, name="get_text_clarity_setting")
 ]
 
 
