@@ -8,12 +8,14 @@ from django.db import IntegrityError
 
 from .models import User
 
+
 def home(request):
     if request.user.is_authenticated:
         return render(request, "Choose_and_Tell/home.html")
     else:
         return redirect('login')
-    
+
+
 def login_user(request):
     if request.method == "POST":
 
@@ -33,9 +35,11 @@ def login_user(request):
     else:
         return render(request, "Choose_and_Tell/login.html")
 
+
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect(reverse("home"))
+
 
 def register(request):
     if request.method == "POST":
@@ -63,17 +67,24 @@ def register(request):
     else:
         return render(request, "Choose_and_Tell/register.html")
 
+
 def settings(request):
     return render(request, "Choose_and_Tell/settings.html")
+
 
 def game(request):
     return render(request, "Choose_and_Tell/travel_by.html")
 
+
 def car(request):
-    return render(request, "Choose_and_Tell/car.html") #needs to be changed for car storyline
+    # needs to be changed for car storyline
+    return render(request, "Choose_and_Tell/car_old.html")
+
 
 def rocket(request):
     return render(request, "Choose_and_Tell/choose_destination_space.html")
 
+
 def boat(request):
-    return render(request, "Choose_and_Tell/choose_destination_space.html") #needs to be changed for car storyline
+    # needs to be changed for car storyline
+    return render(request, "Choose_and_Tell/choose_destination_space.html")
