@@ -126,6 +126,45 @@
 }
 
 
+
+.game-button {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+    left: 50%;
+    top: 30vh;
+    transform: translate(-50%, -50%);
+}
+
+.game-button:hover {
+    transform: translate(-50%, -55%);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1), 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.game-button:hover,
+.game-button:active,
+.game-button:focus,
+.game-button:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
 /* CHOOSE DESTINATION CSS */
 #destination_body {
     background-image: url(space.png);
@@ -307,6 +346,18 @@
 
 
 /*SETTINGS JAVASCRIPT*/
+
+.settings_title {
+    position: absolute;
+    top: 17%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+}
+
+
 .slider{
     position:absolute;
     top:50%;
