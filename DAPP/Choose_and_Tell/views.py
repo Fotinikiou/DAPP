@@ -9,12 +9,14 @@ from django.shortcuts import get_object_or_404
 
 from .models import User, Person
 
+
 def home(request):
     if request.user.is_authenticated:
         return render(request, "Choose_and_Tell/home.html")
     else:
         return redirect('login')
-    
+
+
 def login_user(request):
     if request.method == "POST":
 
@@ -34,9 +36,11 @@ def login_user(request):
     else:
         return render(request, "Choose_and_Tell/login.html")
 
+
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect(reverse("home"))
+
 
 def register(request):
     if request.method == "POST":
@@ -64,6 +68,7 @@ def register(request):
     else:
         return render(request, "Choose_and_Tell/register.html")
 
+
 def settings(request):
     if request.method =="POST":
         boldness = request.POST["boldness"]
@@ -77,16 +82,25 @@ def settings(request):
     else:
         return render(request, "Choose_and_Tell/settings.html")
 
+
 def game(request):
     return render(request, "Choose_and_Tell/travel_by.html")
 
+
 def car(request):
-    return render(request, "Choose_and_Tell/car.html") #needs to be changed for car storyline
+    # needs to be changed for car storyline
+    return render(request, "Choose_and_Tell/car_old.html")
+
 
 def rocket(request):
     return render(request, "Choose_and_Tell/choose_destination_space.html")
 
+
 def boat(request):
+<<<<<<< HEAD
+    # needs to be changed for car storyline
+    return render(request, "Choose_and_Tell/choose_destination_space.html")
+=======
     return render(request, "Choose_and_Tell/choose_destination_space.html") #needs to be changed for car storyline
 
 def get_tc(request):
@@ -107,3 +121,4 @@ def save_tc(request):
         return JsonResponse(person.serialize())
     except Person.DoesNotExist:
         return JsonResponse({'text_clarity': None})
+>>>>>>> e2763107a6d7e21b25e2434a7d91d7280f1a0544

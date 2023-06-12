@@ -3,45 +3,45 @@
 
 {% block body %}
 
-<div class="go_where">
+<div id="go_where">
     <br>
     <div id="go_where_heading">
-        <h6  class="heading_style">Where will you go?</h6>
+        <h6 class="heading_style">Where will you go?</h6>
     </div>
     <br>
     <br>
     <img class="background" src="{% static 'Choose_and_Tell/Pictures/go_where.PNG' %}">
-        
+
     <button class="button_style left">
         Shopping Mall
     </button>
-    
+
     <button class="button_style center">
-       Mountain
+        Mountain
     </button>
-    
+
     <button class="button_style right">
         Camping
     </button>
 </div>
 
-<div class="shopping_mall">
+<div id="shopping_mall">
     <br>
     <div id="go_where_heading">
-        <h6  class="heading_style">You are now inside the shopping mall</h6>
+        <h6 class="heading_style">You are now inside the shopping mall</h6>
     </div>
     <br>
     <br>
     <img class="background" src="{% static 'Choose_and_Tell/Pictures/shopping_mall.jpg' %}">
-        
+
     <button class="button_style left">
         Cinema
     </button>
-    
+
     <button class="button_style center">
-       Shopping
+        Shopping
     </button>
-    
+
     <button class="button_style right">
         Eat Ice Cream
     </button>
@@ -49,8 +49,8 @@
 {% endblock %}
 {% block script %}
 
- <script src="{% static 'Choose_and_Tell/car.js' %}"> </script>
+<script src="{% static 'Choose_and_Tell/car_old.js' %}"> </script>
 
 
-      
+
 {% endblock %}
