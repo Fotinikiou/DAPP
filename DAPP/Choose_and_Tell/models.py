@@ -25,5 +25,5 @@ class Person(models.Model):
         return {
             "id": self.id,
             "player": self.player,
-            "text_clarity": self.text_clarity_setting
+            "text_clarity_setting": self.text_clarity_setting
         }

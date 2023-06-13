@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
     const text_size = document.querySelector('#text_size_control');
     
+    
     //ADJUSTING CONTRAST
     contrast.addEventListener('input', function() {
         const contrast_value = contrast.value;
@@ -28,16 +29,16 @@ document.addEventListener('DOMContentLoaded', function(){
 
     //ADJUSTING BOLDNESS 
 
-    fetch('/get_text_clarity_setting')
-        .then(response => response.json())
-        .then(data => {
-            const currentSliderValue = data.text_clarity;
-            document.querySelector('#bold_control').value = currentSliderValue;
-            document.querySelector('#bold_control + span').textContent = currentSliderValue;
-        })
-            .catch(error => {
-            console.error('Error fetching text clarity setting:', error);
-        });
+    //fetch('/get_text_clarity_setting')
+     //   .then(response => response.json())
+      //  .then(data => {
+       //     const currentSliderValue = data.text_clarity;
+       //     document.querySelector('#bold_control').value = currentSliderValue;
+        //    document.querySelector('#bold_control + span').textContent = currentSliderValue;
+      //  })
+        //    .catch(error => {
+       //     console.error('Error fetching text clarity setting:', error);
+       // });
 
     bold_control.addEventListener('input', function() {
         const bold_value = bold_control.value;

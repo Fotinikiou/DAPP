@@ -5,6 +5,9 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
 from django.shortcuts import get_object_or_404
+import json
+from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 
 from .models import User, Person
@@ -12,7 +15,13 @@ from .models import User, Person
 
 def home(request):
     if request.user.is_authenticated:
-        return render(request, "Choose_and_Tell/home.html")
+        try:
+            person = Person.objects.get(player=request.user)
+            user_id = person.id
+        except ObjectDoesNotExist:
+            user_id = None
+        return render(request, "Choose_and_Tell/home.html",
+            {"user_id": user_id })
     else:
         return redirect('login')
 
@@ -30,8 +39,15 @@ def login_user(request):
             login(request, user)
             return HttpResponseRedirect(reverse("home"))
         else:
+            if request.user.is_authenticated:
+                try:
+                    person = Person.objects.get(player=request.user)
+                    user_id = person.id
+                except ObjectDoesNotExist:
+                    user_id = None
             return render(request, "Choose_and_Tell/login.html", {
-                "message": "Invalid username and/or password."
+                "message": "Invalid username and/or password.",
+                "user_id": user_id
             })
     else:
         return render(request, "Choose_and_Tell/login.html")
@@ -70,7 +86,14 @@ def register(request):
 
 
 def settings(request):
+    if request.user.is_authenticated:
+        try:
+            person = Person.objects.get(player=request.user)
+            user_id = person.id
+        except ObjectDoesNotExist:
+            user_id = None
     if request.method =="POST":
+        user_id = request.user.id
         boldness = request.POST["boldness"]
         player = request.user
         person, created = Person.objects.get_or_create(player=player)
@@ -78,47 +101,80 @@ def settings(request):
         # Update the text_clarity_setting field with the boldness value
         person.text_clarity_setting = boldness
         person.save()
-        return render(request, "Choose_and_Tell/home.html")
+        return render(request, "Choose_and_Tell/home.html", {
+            "user": user_id
+        })
     else:
-        return render(request, "Choose_and_Tell/settings.html")
+        return render(request, "Choose_and_Tell/settings.html", {
+            "user_id": user_id
+        })
 
 
 def game(request):
-    return render(request, "Choose_and_Tell/travel_by.html")
+    try:
+        person = Person.objects.get(player=request.user)
+        user_id = person.id
+    except ObjectDoesNotExist:
+        user_id = None
+    return render(request, "Choose_and_Tell/travel_by.html", {
+        "user_id": user_id
+    })
 
 
 def car(request):
+    try:
+        person = Person.objects.get(player=request.user)
+        user_id = person.id
+    except ObjectDoesNotExist:
+        user_id = None
     # needs to be changed for car storyline
-    return render(request, "Choose_and_Tell/car_old.html")
+    return render(request, "Choose_and_Tell/car_old.html", {
+        "user_id": user_id
+    })
 
 
 def rocket(request):
-    return render(request, "Choose_and_Tell/choose_destination_space.html")
+    try:
+        person = Person.objects.get(player=request.user)
+        user_id = person.id
+    except ObjectDoesNotExist:
+        user_id = None
+    return render(request, "Choose_and_Tell/choose_destination_space.html", {
+        "user_id": user_id
+    })
 
 
 def boat(request):
-<<<<<<< HEAD
-    # needs to be changed for car storyline
-    return render(request, "Choose_and_Tell/choose_destination_space.html")
-=======
-    return render(request, "Choose_and_Tell/choose_destination_space.html") #needs to be changed for car storyline
-
-def get_tc(request):
-    if request.method == 'POST':
-        text_clarity = request.POST.get('text_clarity')
-        user = request.user
-        person, created = Person.objects.get_or_create(player=user)
-        person.text_clarity_setting = text_clarity
-        person.save()
-        return JsonResponse({
-            'message': 'TC saved successfully'
-        })
-    
-def save_tc(request):
-    user = request.user
     try:
-        person = Person.objects.get(player=user)
-        return JsonResponse(person.serialize())
-    except Person.DoesNotExist:
-        return JsonResponse({'text_clarity': None})
->>>>>>> e2763107a6d7e21b25e2434a7d91d7280f1a0544
+        person = Person.objects.get(player=request.user)
+        user_id = person.id
+    except ObjectDoesNotExist:
+        user_id = None
+    return render(request, "Choose_and_Tell/choose_destination_space.html", {
+        "user_id": user_id
+    }) #needs to be changed for car storyline
+
+
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def get_tc(request, user_id):
+   try:
+       settings = Person.objects.get(player=request.user, pk=user_id)
+   except Person.DoesNotExist:
+       return JsonResponse({"error": "person not found."}, status=404)
+   
+   if request.method == "GET":
+       return JsonResponse(settings.serialize())
+    
+   else:
+       return JsonResponse({
+           "error": "GET or PUT request required."
+       }, status=400)
+
+    #user = request.user
+    #try:
+        #person = Person.objects.get(player=user)
+       # return JsonResponse(person.serialize())
+    #except Person.DoesNotExist:
+        #return JsonResponse({'text_clarity': None})

@@ -15,8 +15,7 @@ urlpatterns  = [
     path('boat', views.boat, name='boat'),
 
     # API URLS
-    path('save_text_clarity_setting', views.save_tc, name='save_text_clarity_setting'),
-    path('get_text_clarity_setting', views.get_tc, name="get_text_clarity_setting")
+    path('get_text_clarity_setting/<int:user_id>', views.get_tc, name="get_text_clarity_setting")
 ]
 
 

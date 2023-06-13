@@ -3,7 +3,8 @@ from django.contrib import admin
 
 from .models import *
 
-
+class UserAdmin(admin.ModelAdmin):
+    list_display=('id', 'user')
 
 class PersonAdmin(admin.ModelAdmin):
     list_display=('id', 'player', 'text_clarity_setting' )
