@@ -24,6 +24,6 @@ class Person(models.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "player": self.player,
+            "player": self.player.username,
             "text_clarity_setting": self.text_clarity_setting
         }
