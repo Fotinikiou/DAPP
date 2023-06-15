@@ -9,14 +9,8 @@ class User(AbstractUser):
 
 class Person(models.Model):
     player = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "player", blank = True)
-    #image = models.ImageField(upload_to='person_images', null=True, blank=True)
     text_clarity_setting = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    #speed = models.DecimalField(max_digits=5, decimal_places=2)
-    #preference = models.CharField(max_length=10, choices=(
-       # ('mouse', 'Mouse'),
-        #('button', 'Button'),
-   # ))
-
+   
     def save(self, *args, **kwargs):
         kwargs.pop('force_insert', None)
         super().save(*args, **kwargs)
