@@ -31,7 +31,7 @@ def login_user(request):
 
         # Attempt to sign user in
         username = request.POST["username"]
-        password = str(hash(request.POST["password"]))
+        password = request.POST["password"]
         user = authenticate(request, username=username, password=password)
 
         # Check if authentication successful
@@ -74,7 +74,7 @@ def register(request):
         # Attempt to create new user
         try:
             user = User.objects.create_user(
-                username, email, str(hash(password)))
+                username, email, password)
             user.save()
         except IntegrityError:
             return render(request, "Choose_and_Tell/register.html", {
@@ -140,7 +140,7 @@ def rocket(request):
         user_id = person.id
     except ObjectDoesNotExist:
         user_id = None
-    return render(request, "Choose_and_Tell/choose_destination_space.html", {
+    return render(request, "Choose_and_Tell/rocket.html", {
         "user_id": user_id
     })
 
@@ -156,7 +156,7 @@ def boat(request):
     })  # needs to be changed for car storyline
 
 
-@login_required
+@ login_required
 def get_tc(request, user_id):
     try:
         settings = Person.objects.get(player=request.user, pk=user_id)
@@ -171,9 +171,9 @@ def get_tc(request, user_id):
             "error": "GET or PUT request required."
         }, status=400)
 
-    #user = request.user
+    # user = request.user
     # try:
-        #person = Person.objects.get(player=user)
+        # person = Person.objects.get(player=user)
         # return JsonResponse(person.serialize())
     # except Person.DoesNotExist:
         # return JsonResponse({'text_clarity': None})

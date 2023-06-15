@@ -24,6 +24,7 @@ function disapearButton(name) {
     const button = document.querySelector(`.${name}`);
     button.style.display = 'none';
 }
+
 document.addEventListener('DOMContentLoaded', function () {
     //initialize the page
     disappearPage('they_are_going')

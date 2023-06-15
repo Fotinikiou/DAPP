@@ -1,0 +1,75 @@
+{% extends "Choose_and_Tell/index.html" %}
+{% load static %}
+
+{% block body %}
+
+<h1 class="heading_style">
+    Choose the destination
+</h1>
+
+<!-- pages -->
+<div id="choose_destination">
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/choose_destination.PNG' %}">
+</div>
+
+<div id="traveling">
+    <marquee behavior="scroll" direction="down" height="600" scrollamount="15">
+        <img src="{% static 'Choose_and_Tell/Pictures/rocket.PNG' %}" class="rocket" width=29%>
+    </marquee>
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/space.PNG' %}">
+</div>
+
+<div ID="in_mars">
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/mars.webp' %}">
+</div>
+
+<div ID="in_moon">
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/moon.png' %}">
+</div>
+
+<div id='in_spacestation'>
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/spacestation.jpg' %}">
+</div>
+
+<div id='face_monsters_mars'>
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/choose_monster_mars.png' %}">
+</div>
+
+<div id='face_monsters_moon'>
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/choose_monster_moon.png' %}">
+</div>
+
+<div id='face_monsters_spacestation'>
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/choose_monster_spacestation.png' %}">
+</div>
+
+<div id='rocket_mars'>
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/rocket_mars.png' %}">
+</div>
+
+<div id='rocket_moon'>
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/rocket_moon.png' %}">
+</div>
+
+<div id='rocket_spacestation'>
+    <img class="background" src="{% static 'Choose_and_Tell/Pictures/rocket_spacestation.png' %}">
+</div>
+
+<!-- buttons -->
+<button class="left button_style">
+    Mars
+</button>
+
+<button class="center button_style">
+    Space Station
+</button>
+
+<button class="right button_style">
+    Moon
+</button>
+
+{% endblock %}
+<!-- script -->
+{% block script %}
+<script src="{% static 'Choose_and_Tell/rocket.js' %}"></script>
+{% endblock %}
