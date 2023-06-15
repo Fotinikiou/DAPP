@@ -21,7 +21,7 @@ def home(request):
         except ObjectDoesNotExist:
             user_id = None
         return render(request, "Choose_and_Tell/home.html",
-            {"user_id": user_id })
+                      {"user_id": user_id})
     else:
         return redirect('login')
 
@@ -73,7 +73,8 @@ def register(request):
 
         # Attempt to create new user
         try:
-            user = User.objects.create_user(username, email, password)
+            user = User.objects.create_user(
+                username, email, password)
             user.save()
         except IntegrityError:
             return render(request, "Choose_and_Tell/register.html", {
@@ -92,7 +93,7 @@ def settings(request):
             user_id = person.id
         except ObjectDoesNotExist:
             user_id = None
-    if request.method =="POST":
+    if request.method == "POST":
         user_id = request.user.id
         boldness = request.POST["boldness"]
         player = request.user
@@ -139,7 +140,7 @@ def rocket(request):
         user_id = person.id
     except ObjectDoesNotExist:
         user_id = None
-    return render(request, "Choose_and_Tell/choose_destination_space.html", {
+    return render(request, "Choose_and_Tell/rocket.html", {
         "user_id": user_id
     })
 
@@ -152,29 +153,27 @@ def boat(request):
         user_id = None
     return render(request, "Choose_and_Tell/choose_destination_space.html", {
         "user_id": user_id
-    }) #needs to be changed for car storyline
+    })  # needs to be changed for car storyline
 
 
-from django.contrib.auth.decorators import login_required
-
-@login_required
+@ login_required
 def get_tc(request, user_id):
-   try:
-       settings = Person.objects.get(player=request.user, pk=user_id)
-   except Person.DoesNotExist:
-       return JsonResponse({"error": "person not found."}, status=404)
-   
-   if request.method == "GET":
-       return JsonResponse(settings.serialize())
-    
-   else:
-       return JsonResponse({
-           "error": "GET or PUT request required."
-       }, status=400)
+    try:
+        settings = Person.objects.get(player=request.user, pk=user_id)
+    except Person.DoesNotExist:
+        return JsonResponse({"error": "person not found."}, status=404)
 
-    #user = request.user
-    #try:
-        #person = Person.objects.get(player=user)
-       # return JsonResponse(person.serialize())
-    #except Person.DoesNotExist:
-        #return JsonResponse({'text_clarity': None})
+    if request.method == "GET":
+        return JsonResponse(settings.serialize())
+
+    else:
+        return JsonResponse({
+            "error": "GET or PUT request required."
+        }, status=400)
+
+    # user = request.user
+    # try:
+        # person = Person.objects.get(player=user)
+        # return JsonResponse(person.serialize())
+    # except Person.DoesNotExist:
+        # return JsonResponse({'text_clarity': None})
