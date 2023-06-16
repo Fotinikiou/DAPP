@@ -6,16 +6,16 @@
 
 
 <div id="choose_travel">
-    <h1>How do you wish to travel?</h1>
-    <a href="{% url 'car' %}">Car</a>
+    <h1 class="heading_style">How do you wish to travel?</h1>
+    <a href="{% url 'car' %}" class="button_style left">Car</a>
 
-    <a href="{% url 'rocket' %}">Rocket</a>
+    <a href="{% url 'rocket' %}" class="button_style center">Rocket</a>
 
-    <a href="{% url 'boat' %}">Boat</a>
+    <a href="{% url 'boat' %}" class="button_style right">Boat</a>
 
 </div>
-{% endblock %}   
+{% endblock %}
 
-{% block script %}   
-    <script src="travel_by.js"></script>
+{% block script %}
+<script src="travel_by.js"></script>
 {% endblock%}
