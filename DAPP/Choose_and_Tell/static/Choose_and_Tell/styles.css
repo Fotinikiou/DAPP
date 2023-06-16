@@ -230,7 +230,6 @@
     left: 0;
     width: 100%;
     height: 90vh;
-    z-index:1;
 }
 
 #go_where_heading {
@@ -451,4 +450,22 @@
 
 #settings_submit_button:hover {
     background-color: #be6fffad;
+}
+
+.pic {
+    width: 250px;
+    height: 200px;
+   
+}
+
+#bear {
+    position: absolute;
+    top: 260%;
+    left:15%;
+}
+
+#tiger {
+    position: absolute;
+    top: 225%;
+    left: 45%;
 }
