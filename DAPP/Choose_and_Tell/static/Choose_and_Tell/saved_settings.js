@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const user = document.querySelector('#user');
     const settings_box = document.querySelector('#settingsbox');
     const slider = document.querySelector('.slider');
+    const settings_title = document.querySelector('.settings_title');
 
     // FETCHING SETTINGS DATA TO ADD TO FULL WEBSITE
     fetch(`/get_text_clarity_setting/${user_id_test}`)
@@ -24,16 +25,26 @@ document.addEventListener('DOMContentLoaded', function(){
         //brightness
         body.style.filter = `brightness(${brightness}%)`;
         if (brightness !== null) {
+            console.log("Into Brightness")
             let current_user_top = parseInt(getComputedStyle(user).top);
-            user.style.top = (current_user_top -2) + '%';
-
+            user.style.top = (current_user_top +20) + 'px';
+            console.log("After sign in:")
+            console.log(user.style.top)
             let current_settings_top = parseInt(getComputedStyle(settings_box).top);
-            settings_box.style.top = (current_settings_top-2) + '%';
-
-            if (slider) {
+            settings_box.style.top = (current_settings_top+20) + 'px';
+            console.log("After settings:")
+            console.log(settings_box.style.top)
+            if (slider && settings_title) { 
+                console.log("In if statement")
+                let settings_title_pos = parseFloat(getComputedStyle(settings_title).top);
+                settings_title.style.top = (settings_title_pos +160) + '%';
                 let current_slider_boxes_pos = parseFloat(getComputedStyle(slider).top);
-                slider.style.top = (current_slider_boxes_pos + 50) + '%';
+                slider.style.top = (current_slider_boxes_pos +490) + '%';
             }
+            console.log("Sliders:");
+            console.log(slider.style.top);
+            console.log("settings title:");
+            console.log(settings_title.style.top);
         }
 
     });
