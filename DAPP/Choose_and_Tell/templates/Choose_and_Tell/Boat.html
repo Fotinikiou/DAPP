@@ -1,0 +1,27 @@
+{% extends "Choose_and_Tell/index.html" %}
+{% load static %}
+
+{% block body %}
+
+<div id="boat_1">
+    <button class="button_style left">
+        Go to a island
+    </button>
+
+    <button class="button_style center">
+        Fishing
+    </button>
+
+    <button class="button_style right">
+        Scuba diving 
+    </button>
+</div>
+
+{% endblock %} 
+
+
+
+
+{% block script %}
+<script src="{% static 'Choose_and_Tell/boat.js' %}"> </script>
+{% endblock %}

@@ -1,11 +1,34 @@
+
+//NOTE THAT THIS JAVASCRIPT DOES NOT INFLUENCE THE DATABASE IN ANY WAY
+
 document.addEventListener('DOMContentLoaded', function(){
     const contrast = document.querySelector('#contrast_control');
-    const bold_control = document.querySelector('#bold_control')
+    const bold_control = document.querySelector('#bold_control');
+    const brightness = document.querySelector('#brightness_control')
     const body = document.body;
     const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
     const text_size = document.querySelector('#text_size_control');
+    const container = document.querySelector('#container');
+    const temporary = document.querySelector('#temporary');
+    const user = document.querySelector('#user');
+    const settings_box = document.querySelector('#settings_box');
     
-    
+    //ADJUSTING TEXT CLARITY
+    bold_control.addEventListener('input', function() {
+      const bold_value = this.value;
+      const font_weight = FontAdjust(bold_value);
+      body.style.fontWeight = font_weight;
+      for (const heading of headings) {
+          heading.style.fontWeight = font_weight;
+      }
+    });
+
+    //ADJUSTING BRIGHTNESS
+    brightness.addEventListener('input', function() {
+      const brightness_value = this.value; 
+      temporary.style.filter = `brightness(${brightness_value}%)`;
+    });
+
     //ADJUSTING CONTRAST
     contrast.addEventListener('input', function() {
         const contrast_value = contrast.value;
@@ -13,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function(){
         body.style.filter = `contrast(${contrast_value}%)`;
     });
 
-
+    
      //ADJUSTING TEXT SIZE
      text_size.addEventListener('input', function() {
         const size = text_size.value;
@@ -40,34 +63,9 @@ document.addEventListener('DOMContentLoaded', function(){
        //     console.error('Error fetching text clarity setting:', error);
        // });
 
-    bold_control.addEventListener('input', function() {
-        const bold_value = bold_control.value;
-        const font_weight = FontAdjust(bold_value);
-        body.style.fontWeight = font_weight;
-        for (const heading of headings) {
-            heading.style.fontWeight = font_weight;
-        }
-        SaveTextClarityToDatabase(font_weight);
-    });
-});
 
-function SaveTextClarityToDatabase(value) {
-    fetch('/save_text_clarity_setting', {
-        method: 'POST',
-        body: JSON.stringify({ text_clarity: value }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => {
-        if (response.ok) {
-          console.log('Text clarity setting saved successfully');
-        }
-      })
-      .catch(error => {
-        console.error('Error saving text clarity setting:', error);
-      });
-    }
+    
+});
 
 
 

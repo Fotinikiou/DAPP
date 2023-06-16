@@ -85,8 +85,9 @@ def register(request):
     else:
         return render(request, "Choose_and_Tell/register.html")
 
-
+@login_required
 def settings(request):
+    user_id = None
     if request.user.is_authenticated:
         try:
             person = Person.objects.get(player=request.user)
@@ -96,14 +97,17 @@ def settings(request):
     if request.method == "POST":
         user_id = request.user.id
         boldness = request.POST["boldness"]
+        brightness = request.POST["brightness"]
         player = request.user
         person, created = Person.objects.get_or_create(player=player)
 
         # Update the text_clarity_setting field with the boldness value
         person.text_clarity_setting = boldness
+        person.brightness = brightness
         person.save()
+        user_id = person.id  
         return render(request, "Choose_and_Tell/home.html", {
-            "user": user_id
+            "user_id": user_id
         })
     else:
         return render(request, "Choose_and_Tell/settings.html", {
