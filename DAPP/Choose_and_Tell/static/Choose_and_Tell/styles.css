@@ -380,6 +380,7 @@
     font-size: 35px;
     color: white;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 

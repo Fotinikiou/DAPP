@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const temporary = document.querySelector('#temporary');
     const user = document.querySelector('#user');
     const settings_box = document.querySelector('#settings_box');
+    const slider = document.querySelector('.slider');
     
     //ADJUSTING TEXT CLARITY
     bold_control.addEventListener('input', function() {
@@ -37,17 +38,27 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     
-     //ADJUSTING TEXT SIZE
-     text_size.addEventListener('input', function() {
-        const size = text_size.value;
-        const size_scale = SizeAdjust(size);
+    const preview = document.createElement('h4');
+        
 
-        const allelements = document.querySelectorAll('*');
-        allelements.forEach(function(element) {
-            const original_font_size = window.getComputedStyle(element).fontSize;
-            const adjusted_font_size = parseFloat(original_font_size)*size_scale;
-            element.style.fontSize = adjusted_font_size + 'px';
-        });
+    preview.textContent = "Preview text size adjustment";
+    preview.setAttribute('class', 'settings_title');
+    preview.style.top = "120%";
+    slider.appendChild(preview);
+     //ADJUSTING TEXT SIZE
+    text_size.addEventListener('input', function() {
+      const size = text_size.value;
+      const size_scale = SizeAdjust(size); 
+      preview.style.fontSize = (25 + size_scale) + 'px';
+
+
+
+        //const allelements = document.querySelectorAll('*');
+        //allelements.forEach(function(element) {
+         //   const original_font_size = window.getComputedStyle(element).fontSize;
+          //  const adjusted_font_size = parseFloat(original_font_size)+size_scale;
+          //  element.style.fontSize = adjusted_font_size + 'px';
+       // });
     });
 
     //ADJUSTING BOLDNESS 
@@ -83,6 +94,10 @@ function FontAdjust(slider) {
 }
 
 function SizeAdjust(slider){
-    SliderScale = slider/20;
-    return SliderScale;
+    const minSlider = 0;
+    const maxSlider = 12;
+    const adjust = (maxSlider-minSlider)/2;
+    const centered = slider - adjust
+    return centered;
+
 }

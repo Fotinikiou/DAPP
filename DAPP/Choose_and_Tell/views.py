@@ -98,12 +98,15 @@ def settings(request):
         user_id = request.user.id
         boldness = request.POST["boldness"]
         brightness = request.POST["brightness"]
+        text_size = request.POST["text_size"]
         player = request.user
         person, created = Person.objects.get_or_create(player=player)
 
         # Update the text_clarity_setting field with the boldness value
         person.text_clarity_setting = boldness
         person.brightness = brightness
+        person.text_size = text_size
+        person.text_size_bool = True
         person.save()
         user_id = person.id  
         return render(request, "Choose_and_Tell/home.html", {

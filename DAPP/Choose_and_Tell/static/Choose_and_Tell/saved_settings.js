@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function(){
         console.log(settings);
         var tc_setting = settings.text_clarity_setting;
         var brightness = settings.brightness;
-
+        var text_size = settings.text_size;
+        var text_size_bool = settings.text_size_bool;
         //text clarity
         const font_weight = FontAdjust(tc_setting);
         body.style.fontWeight = font_weight;
@@ -40,14 +41,26 @@ document.addEventListener('DOMContentLoaded', function(){
                 settings_title.style.top = (settings_title_pos +160) + '%';
                 let current_slider_boxes_pos = parseFloat(getComputedStyle(slider).top);
                 slider.style.top = (current_slider_boxes_pos +490) + '%';
+                console.log("Sliders:");
+                console.log(slider.style.top);
+                console.log("settings title:");
+                console.log(settings_title.style.top);
             }
-            console.log("Sliders:");
-            console.log(slider.style.top);
-            console.log("settings title:");
-            console.log(settings_title.style.top);
+            
         }
 
-    });
+        //text size
+        while (text_size_bool == true) {
+            const allelements = document.querySelectorAll('*');
+            allelements.forEach(function(element) { 
+                const original_font_size = window.getComputedStyle(element).fontSize;
+                const adjusted_font_size = (parseFloat(original_font_size)+parseFloat(text_size));
+                element.style.fontSize = adjusted_font_size + 'px';
+            });
+            text_size_bool = false;
+        } 
+        
+    }); // <-- Missing closing brace here
 
     function FontAdjust(slider) {
         const minSlider = 0;
@@ -59,5 +72,13 @@ document.addEventListener('DOMContentLoaded', function(){
         const mappedFontWeight = Math.round(minFontWeight + (normalised * (maxFontWeight - minFontWeight)));
       
         return mappedFontWeight;
+    }
+
+    function SizeAdjust(slider){
+        const minSlider = 0;
+        const maxSlider = 12;
+        const adjust = (maxSlider-minSlider)/2;
+        const centered = slider - adjust
+        return centered;
     }
 });
